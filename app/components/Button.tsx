@@ -1,9 +1,11 @@
-import { ButtonProps } from "../interfaces/ButtonProps";
+'use client'; 
+
+import React from 'react';
+import { ButtonProps } from "../ButtonProps";
 
 const Button = ({ onClick, label }: ButtonProps) => (
     <button
         onClick={onClick}
-        className="button hover:bg-blingGray"
     >
         {label}
     </button>

@@ -17,3 +17,8 @@ body {
 h1, h2, h3 {
   font-family: 'Mulish', sans-serif;
 }
+
+Button {
+  @apply mt-4 px-4 py-2 bg-pokeBlue-500 hover:bg-pokeGray text-white rounded;
+  transition: background-color 0.2s ease;
+}

@@ -12,8 +12,12 @@ const config: Config = {
         heading: ['Mulish', 'sans-serif'], 
       },
       colors: {
-        blingGray: '#1f2937',
+        pokeGray: '#1f2937',
         pokeRed: '#E94343',
+        pokeBlue: {
+          600: '#0000FF',
+          500: '#2563eb',
+        }
       },
     },
   },
