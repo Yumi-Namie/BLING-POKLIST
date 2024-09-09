@@ -17,10 +17,10 @@ This project demonstrates how to use Next.js to create a Pokémon list applicati
 ## Application Images 🖼️
 
 ### Top Section
-![alt text](/renata-namie-bling-web-test/public/readme/image-1.png)
+![alt text](/readme/image-1.png)
 
 ### Bottom Section ⬇️
-![alt text](/renata-namie-bling-web-test/public/readme/image-1.png)
+![alt text](/public/readme/image-1.png)
 
 ### Pokémon Details
-![alt text](/renata-namie-bling-web-test/public/readme/image-2.png)
+![alt text](/readme/image-2.png)
