@@ -1,0 +1,8 @@
+Name: Renata Yumi Namie Ikuta
+
+Install dependencies and start the development server:
+npm install;
+nm run dev
+
+Estimated time spent on the test (in hours):
+12hours
