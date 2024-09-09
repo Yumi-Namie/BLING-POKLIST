@@ -8,9 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['Mulish', 'sans-serif'], 
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        blingGray: '#1f2937',
+        pokeRed: '#E94343',
       },
     },
   },
