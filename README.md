@@ -17,7 +17,7 @@ This project demonstrates how to use Next.js to create a Pokémon list applicati
 ## Application Images 🖼️
 
 ### Top Section
-![alt text](/public/readme/image-1.png)
+![alt text](/public/readme/image.png)
 
 ### Bottom Section ⬇️
 ![alt text](/public/readme/image-1.png)
