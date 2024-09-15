@@ -2,14 +2,14 @@ import PokemonCard from '@/app/components/PokemonCard';
 import { GetServerSideProps } from 'next';
 import { PokemonData } from '@/app/interfaces/PokemonData';
 import Button from '@/app/components/Button';
+import { fetchPokemonData } from '@/app/services/api'
 
 interface Props {
-    pokemon?: PokemonData; // Tornar opcional para lidar com erros
+    pokemon?: PokemonData;
 }
 
 const PokemonPage = ({ pokemon }: Props) => {
     if (!pokemon) {
-        // Se não houver Pokémon, você pode optar por exibir uma mensagem de carregamento ou outro comportamento
         return <div>Loading...</div>;
     }
 
@@ -34,16 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const { name } = context.params!;
     
     try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-        
-        if (!response.ok) {
-            // Se a resposta não for OK (status não é 2xx), redirecionar para a página personalizada
-            context.res.writeHead(302, { Location: '/not-found' });
-            context.res.end();
-            return { props: {} }; // Retorna props vazias, pois o redirecionamento já foi feito
-        }
-
-        const data = await response.json();
+        const data = await fetchPokemonData(name as string);
 
         const pokemon = {
             name: data.name,
@@ -60,10 +51,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             },
         };
     } catch (error) {
-        // Em caso de erro na solicitação, redirecionar para a página personalizada
         context.res.writeHead(302, { Location: '/not-found' });
         context.res.end();
-        return { props: {} }; // Retorna props vazias, pois o redirecionamento já foi feito
+        return { props: {} };
     }
 };
 
