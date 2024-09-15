@@ -1,7 +1,7 @@
 'use client'; 
 
 import React from 'react';
-import { ButtonProps } from "../ButtonProps";
+import { ButtonProps } from "../interfaces/ButtonProps";
 
 const Button = ({ onClick, label }: ButtonProps) => (
     <button
