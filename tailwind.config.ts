@@ -8,10 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        heading: ['Mulish', 'sans-serif'], 
-      },
+
       colors: {
+        background: '#0a0a0a',
+        foreground: '#ededed',
         pokeGray: '#1f2937',
         pokeRed: '#E94343',
         pokeBlue: {

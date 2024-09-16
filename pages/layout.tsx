@@ -24,7 +24,7 @@ export default function RootLayout({ children, className }: RootLayoutProps) {
           content="Icons made by Those Icons from Flaticon"
         />
       </Head>
-      <div className={`antialiased flex flex-col min-h-screen ${className}`}>
+      <div className={`antialiased flex flex-col min-h-screen bg-background text-foreground ${className}`}>
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
