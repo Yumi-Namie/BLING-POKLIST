@@ -2,10 +2,9 @@
 
 import Image from 'next/image';
 import Button from './components/Button';
-import { useRouter } from 'next/navigation';
+import router from 'next/router';
 
-const Custom404 = () => {
-  const router = useRouter();
+export default function NotFound() {
 
   const handleHomeNavigation = () => {
     router.push('/');
@@ -26,6 +25,4 @@ const Custom404 = () => {
       <Button onClick={handleHomeNavigation} label="Go to Home" />
     </div>
   );
-};
-
-export default Custom404;
+}
