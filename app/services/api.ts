@@ -29,3 +29,8 @@ export const fetchPokemonData = async (name: string): Promise<PokemonData> => {
     const url = `${BASE_URL}${name}`;
     return await fetchFromApi<PokemonData>(url);
 };
+
+// Fetch More Pokémons
+export const fetchMorePokemons = async (url: string): Promise<PokemonResponse> => {
+    return await fetchFromApi(url);
+};

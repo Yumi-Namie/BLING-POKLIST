@@ -1,7 +1,7 @@
 import PokemonList from '@/app/components/PokemonList';
 import SearchBar from '@/app/components/SearchBar';
 import { useEffect, useState } from 'react';
-import { fetchAllPokemons } from '@/app/services/api';
+import { fetchAllPokemons, fetchMorePokemons } from '@/app/services/api';
 
 const HomePage = () => {
     const [pokemons, setPokemons] = useState<string[]>([]); // All fetched Pokémon
@@ -62,24 +62,20 @@ const HomePage = () => {
         setSearchTerm(term);
     };
 
-    const loadMore = () => {
+    const loadMore = async () => {
         if (nextUrl && !isSearching) {
-            fetchMorePokemons(nextUrl);
-        }
-    };
-
-    const fetchMorePokemons = async (url: string) => {
-        setLoading(true);
-        try {
-            const data = await fetchAllPokemons(); // Fetch more data with default limit and offset
-            const newPokemons = data.results.map(pokemon => pokemon.name);
-            setPokemons(prev => [...prev, ...newPokemons]);
-            setFilteredPokemons(prev => [...prev, ...newPokemons]);
-            setNextUrl(data.next);
-        } catch (error) {
-            console.error('Error fetching more Pokémon data:', error);
-        } finally {
-            setLoading(false);
+            setLoading(true);
+            try {
+                const data = await fetchMorePokemons(nextUrl);
+                const newPokemons = data.results.map(pokemon => pokemon.name);
+                setPokemons(prev => [...prev, ...newPokemons]);
+                setFilteredPokemons(prev => [...prev, ...newPokemons]);
+                setNextUrl(data.next); 
+            } catch (error) {
+                console.error('Error fetching more Pokémon data:', error);
+            } finally {
+                setLoading(false);
+            }
         }
     };
 
