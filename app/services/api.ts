@@ -18,7 +18,7 @@ const fetchFromApi = async <T>(url: string): Promise<T> => {
     }
 };
 
-// Fetch all Pokémon with limit and offset
+// Fetch all Pokémon with limit and offset - from pokemon[0]
 export const fetchAllPokemons = async (limit: number = 20, offset: number = 0): Promise<PokemonResponse> => {
     const url = `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`;
     return await fetchFromApi(url);

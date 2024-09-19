@@ -8,6 +8,7 @@ const PokemonCard = ({
     weight,
     abilities,
     sprites,
+    stats,
     }: PokemonData) => (
     <div className="bg-white border-4 border-pokeGray shadow-lg rounded-lg  max-w-sm mx-auto my-8">
     <div className="p-4">
@@ -29,18 +30,29 @@ const PokemonCard = ({
         />
         </div>
         <div className="mb-4 text-left text-pokeGray">
-        <p className="mb-2"><strong>ID:</strong> {id}</p>
-        <p className="mb-2"><strong>Height:</strong> {height}</p>
-        <p className="mb-2"><strong>Weight:</strong> {weight}</p>
+            <p className="mb-2"><strong>ID:</strong> {id}</p>
+            <p className="mb-2"><strong>Height:</strong> {height}</p>
+            <p className="mb-2"><strong>Weight:</strong> {weight}</p>
         </div>
         <div className="text-left text-pokeGray">
-        <p className="mb-2"><strong>Abilities:</strong></p>
-        <ul className="list-disc pl-5">
-            {abilities.map((ability, index) => (
-            <li key={index}>{ability.ability.name}</li>
-            ))}
-        </ul>
+            <p className="mb-2"><strong>Abilities:</strong></p>
+            <ul className="list-disc pl-5">
+                {abilities.map((ability, index) => (
+                <li key={index}>{ability.ability.name}</li>
+                ))}
+            </ul>
         </div>
+        <div className="text-left text-pokeGray">
+            <p className="m-2"><strong>Stats:</strong></p>
+            <ul className="list-disc pl-5">
+                {stats.map((stat, index) => (
+                    <li key={index}>
+                        {stat.stat.name} : {stat.base_stat}
+                    </li>
+                ))}
+            </ul>
+        </div>
+
     </div>
     </div>
 );

@@ -22,6 +22,7 @@ const PokemonPage = ({ pokemon }: Props) => {
                 weight={pokemon.weight}
                 abilities={pokemon.abilities}
                 sprites={pokemon.sprites}
+                stats={pokemon.stats}
             />
             <div className="mt-4 flex justify-center">
                 <Button onClick={() => window.history.back()} label="Back" />
@@ -43,6 +44,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             weight: data.weight,
             abilities: data.abilities,
             sprites: data.sprites,
+            stats: data.stats,
         };
 
         return {

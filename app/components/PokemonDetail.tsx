@@ -7,7 +7,8 @@ import { PokemonData } from '../interfaces/PokemonData';
     abilities,
     sprites,
     height,
-    weight
+    weight,
+    stats
     }: PokemonData) => (
     <div className="container mx-auto px-1 py-8">
     <h1 className="text-2xl font-bold mb-4 text-center">{name}</h1>
@@ -40,6 +41,16 @@ import { PokemonData } from '../interfaces/PokemonData';
         ))}
         </ul>
     </div>
+        <div className="mt-4">
+            <p className="mb-2 text-center"><strong>Stats:</strong></p>
+            <ul className="list-disc pl-5">
+                {stats.map((stat, index) => (
+                    <li key={index}>
+                        <strong>{stat.stat.name}:</strong> {stat.base_stat}
+                    </li>
+                ))}
+            </ul>
+        </div>
     </div>
     );
 
